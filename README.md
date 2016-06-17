@@ -7,9 +7,9 @@ See also: http://forum.qt.io/topic/68350/problem-with-singleton-why-isn-t-it-uni
 
 ## TL;DR;
 
-The problem was found. Commit 5b1db19 is bad. It changes how the `load()` is performed:
+The problem was found. Commit 5b1db19a47192b78bb49f773b213ca5c29e2f6eb is bad. It changes how the `load()` is performed:
 ```
-git show 5b1db19
+git show 5b1db19a47192b78bb49f773b213ca5c29e2f6eb
 commit 5b1db19a47192b78bb49f773b213ca5c29e2f6eb
 Author: Nicolas Bigaouette <nbigaouette@gmail.com>
 Date:   Fri Jun 17 10:03:11 2016 -0400
@@ -31,7 +31,7 @@ index 21e3b00..1424282 100644
  }
 ```
 
-Reverting that commit (see adcfaa3) fixed the issue.
+Reverting that commit (see adcfaa35d1ec3546b4d2a2d4494bc01c0cc63983) fixed the issue.
 
 
 ## Problem Description
