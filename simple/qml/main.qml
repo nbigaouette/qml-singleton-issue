@@ -22,9 +22,9 @@ Window {
             id: mouseArea1
             anchors.fill: parent
             onClicked: {
-                console.log("# main.qml::rec1::onClicked() A - MySingleton:", MySingleton)
+                // console.log("# main.qml::rec1::onClicked() A - MySingleton:", MySingleton)
                 loader.source = "qrc:/qml/MyComponentOne.qml";
-                console.log("# main.qml::rec1::onClicked() B - MySingleton:", MySingleton)
+                // console.log("# main.qml::rec1::onClicked() B - MySingleton:", MySingleton)
             }
         }
     }
@@ -41,9 +41,9 @@ Window {
             id: mouseAreaGo
             anchors.fill: parent
             onClicked: {
-                console.log("# main.qml::rec2::onClicked() A - MySingleton:", MySingleton)
+                // console.log("# main.qml::rec2::onClicked() A - MySingleton:", MySingleton)
                 MySingleton.func1();
-                console.log("# main.qml::rec2::onClicked() B - MySingleton:", MySingleton)
+                // console.log("# main.qml::rec2::onClicked() B - MySingleton:", MySingleton)
             }
         }
     }
@@ -60,9 +60,9 @@ Window {
             id: mouseArea2
             anchors.fill: parent
             onClicked: {
-                console.log("# main.qml::rec3::onClicked() A - MySingleton:", MySingleton)
+                // console.log("# main.qml::rec3::onClicked() A - MySingleton:", MySingleton)
                 loader.source = "qrc:/qml/MyComponentTwo.qml";
-                console.log("# main.qml::rec3::onClicked() B - MySingleton:", MySingleton)
+                // console.log("# main.qml::rec3::onClicked() B - MySingleton:", MySingleton)
             }
         }
     }
