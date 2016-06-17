@@ -23,7 +23,7 @@ Window {
             anchors.fill: parent
             onClicked: {
                 console.log("# main.qml::rec1::onClicked() A - MySingleton:", MySingleton)
-                loader.source = "qrc:/MyComponentOne.qml";
+                loader.source = "qrc:/qml/MyComponentOne.qml";
                 console.log("# main.qml::rec1::onClicked() B - MySingleton:", MySingleton)
             }
         }
@@ -61,7 +61,7 @@ Window {
             anchors.fill: parent
             onClicked: {
                 console.log("# main.qml::rec3::onClicked() A - MySingleton:", MySingleton)
-                loader.source = "qrc:/MyComponentTwo.qml";
+                loader.source = "qrc:/qml/MyComponentTwo.qml";
                 console.log("# main.qml::rec3::onClicked() B - MySingleton:", MySingleton)
             }
         }
