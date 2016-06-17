@@ -5,6 +5,35 @@ an issue I have with QML Singletons.
 
 See also: http://forum.qt.io/topic/68350/problem-with-singleton-why-isn-t-it-unique/2
 
+## TL;DR;
+
+The problem was found. Commit 5b1db19 is bad. It changes how the `load()` is performed:
+```
+git show 5b1db19
+commit 5b1db19a47192b78bb49f773b213ca5c29e2f6eb
+Author: Nicolas Bigaouette <nbigaouette@gmail.com>
+Date:   Fri Jun 17 10:03:11 2016 -0400
+
+    Use "///" instead of "/" when loading main.qml
+
+diff --git a/simple/src/main.cpp b/simple/src/main.cpp
+index 21e3b00..1424282 100644
+--- a/simple/src/main.cpp
++++ b/simple/src/main.cpp
+@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
+     QGuiApplication app(argc, argv);
+
+     QQmlApplicationEngine engine;
+-    engine.load(QUrl("qrc:/qml/main.qml"));
++    engine.load(QUrl("qrc:///qml/main.qml"));
+
+     return app.exec();
+ }
+```
+
+Reverting that commit (see adcfaa3) fixed the issue.
+
+
 ## Problem Description
 
 I would like to have a QML Singleton to dispatch signals to whoever is interested
