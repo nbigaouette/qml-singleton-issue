@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MySingleton.qml</file>
+        <file>qmldir</file>
+        <file>MyComponentTwo.qml</file>
+        <file>MyComponentOne.qml</file>
+    </qresource>
+</RCC>
